@@ -13,7 +13,7 @@ body {
   background-color: #262a56;
 }
 
-.input__option {
+.input__options {
   text-align: center;
   margin: 1rem;
   font-size: 1.2rem;
@@ -25,8 +25,21 @@ body {
 .tranform__heading {
   font-weight: bold;
 }
+/* replace input section */
+.hidden{
+  display: none;
+}
 
 .input__text {
   font-family: sans-serif;
   font-weight: 600;
 }
+.input__replace--to {
+  width: 7rem;
+  text-align: center;
+}
+.input__replace--want {
+  width: 7rem;
+  text-align: center;
+}
+
