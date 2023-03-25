@@ -7,6 +7,14 @@ const replaceContainer = document.querySelector('.replace__container');
 const replaceWant = document.querySelector('.input__replace--want');
 const replaceTo = document.querySelector('.input__replace--to');
 
+inputOption.addEventListener('click', function (e) {
+  if (e.target.value === 'replace' || e.target.value === 'replaceall')
+    replaceContainer.classList.remove('hidden');
+  else {
+    replaceContainer.classList.add('hidden');
+  }
+});
+
 btnConvert.addEventListener('click', function () {
   const input = inputText.value;
   const option = inputOption.value;
@@ -27,12 +35,13 @@ btnConvert.addEventListener('click', function () {
       `${replaceTo.value}`
     );
     inputText.value = replaceText;
+  } else if (option === 'replaceall') {
+    const replaceTextAll = input.replaceAll(
+      `${replaceWant.value}`,
+      `${replaceTo.value}`
+    );
+    inputText.value = replaceTextAll;
   } else {
     alert('Please enter valid input!');
   }
-});
-
-inputOption.addEventListener('click', function (e) {
-  if (e.target.value === 'replace') replaceContainer.classList.remove('hidden');
-  return;
 });
